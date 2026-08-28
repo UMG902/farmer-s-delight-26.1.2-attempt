@@ -1,0 +1,7 @@
+@ParametersAreNonnullByDefault
+@NullMarked
+package vectorwing.farmersdelight.common.item.component.consumable;
+
+import org.jspecify.annotations.NullMarked;
+
+import javax.annotation.ParametersAreNonnullByDefault;

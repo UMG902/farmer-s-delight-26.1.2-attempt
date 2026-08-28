@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    "minecraft:brown_mushroom",
+    "minecraft:red_mushroom",
+    "#c:crops/rice",
+    {
+      "children": [
+        "minecraft:carrot",
+        "minecraft:potato"
+      ],
+      "type": "neoforge:compound"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:mushroom_rice"
+  }
+}

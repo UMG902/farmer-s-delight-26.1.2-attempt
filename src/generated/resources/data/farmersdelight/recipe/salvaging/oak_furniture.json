@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "children": [
+        "minecraft:oak_door",
+        "minecraft:oak_trapdoor",
+        "minecraft:oak_sign",
+        "minecraft:oak_hanging_sign",
+        "minecraft:oak_fence",
+        "minecraft:oak_fence_gate",
+        "minecraft:oak_pressure_plate",
+        "minecraft:oak_button",
+        "minecraft:oak_boat",
+        "farmersdelight:oak_cabinet"
+      ],
+      "type": "neoforge:compound"
+    }
+  ],
+  "result": [
+    {
+      "chance": 0.75,
+      "item": {
+        "count": 1,
+        "id": "minecraft:oak_planks"
+      }
+    }
+  ],
+  "tool": "#minecraft:axes"
+}

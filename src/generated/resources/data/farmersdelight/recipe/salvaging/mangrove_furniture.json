@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "children": [
+        "minecraft:mangrove_door",
+        "minecraft:mangrove_trapdoor",
+        "minecraft:mangrove_sign",
+        "minecraft:mangrove_hanging_sign",
+        "minecraft:mangrove_fence",
+        "minecraft:mangrove_fence_gate",
+        "minecraft:mangrove_pressure_plate",
+        "minecraft:mangrove_button",
+        "minecraft:mangrove_boat",
+        "farmersdelight:mangrove_cabinet"
+      ],
+      "type": "neoforge:compound"
+    }
+  ],
+  "result": [
+    {
+      "chance": 0.75,
+      "item": {
+        "count": 1,
+        "id": "minecraft:mangrove_planks"
+      }
+    }
+  ],
+  "tool": "#minecraft:axes"
+}

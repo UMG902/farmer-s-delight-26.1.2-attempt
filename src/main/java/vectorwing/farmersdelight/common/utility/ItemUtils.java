@@ -1,0 +1,67 @@
+package vectorwing.farmersdelight.common.utility;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.Containers;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.common.ItemAbility;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.IItemHandlerModifiable;
+import vectorwing.farmersdelight.common.item.KnifeItem;
+import vectorwing.farmersdelight.common.tag.ModTags;
+
+/**
+ * Util for handling ItemStacks and inventories containing them.
+ */
+public class ItemUtils
+{
+	/**
+	 * Shorthand method for checking if the given stack either has a required ToolAction, or is otherwise part of a given tag.
+	 *
+	 * @param toolAction  The ToolAction to check for
+	 * @param fallbackTag An item tag to check for, if the given ToolAction is absent
+	 * @return true if either condition matches
+	 */
+	public static boolean isValidTool(ItemStack stack, ItemAbility toolAction, TagKey<Item> fallbackTag) {
+		return stack.canPerformAction(toolAction) || stack.is(fallbackTag);
+	}
+
+	public static boolean isKnife(ItemStack stack) {
+		return isValidTool(stack, KnifeItem.KNIFE_HARVEST, ModTags.Items.KNIVES);
+	}
+
+
+	public static void dropItems(Level level, BlockPos pos, IItemHandler inventory) {
+		for (int slot = 0; slot < inventory.getSlots(); slot++) {
+			ItemStack stack = inventory.getStackInSlot(slot);
+			if (!stack.isEmpty()) Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), stack.copy());
+		}
+	}
+
+
+	public static void clearItems(IItemHandler inventory) {
+		if (inventory instanceof IItemHandlerModifiable modifiable) {
+			for (int i = 0; i < inventory.getSlots(); i++) modifiable.setStackInSlot(i, ItemStack.EMPTY);
+		} else {
+			for (int i = 0; i < inventory.getSlots(); i++) {
+				int amount = inventory.getStackInSlot(i).getCount();
+				if (amount > 0) inventory.extractItem(i, amount, false);
+			}
+		}
+	}
+
+
+	public static boolean doesInventoryHaveItems(IItemHandler inventory) {
+		for (int i = 0; i < inventory.getSlots(); i++) if (!inventory.getStackInSlot(i).isEmpty()) return true;
+		return false;
+	}
+
+	public static void spawnItemEntity(Level level, ItemStack stack, double x, double y, double z, double xMotion, double yMotion, double zMotion) {
+		ItemEntity entity = new ItemEntity(level, x, y, z, stack);
+		entity.setDeltaMovement(xMotion, yMotion, zMotion);
+		level.addFreshEntity(entity);
+	}
+}

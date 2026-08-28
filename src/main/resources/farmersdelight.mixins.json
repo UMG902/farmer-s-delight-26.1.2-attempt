@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "package": "vectorwing.farmersdelight.common.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "datafix.ItemStackComponentizationFixMixin",
+    "datafix.V1460Mixin",
+    "CampfireBaleMixin",
+    "CuttingBoardDispenserMixin",
+    "NourishmentAlwaysEatMixin",
+    "PlacePumpkinPieMixin",
+    "RopeFenceConnectionMixin",
+    "VillagerProfessionMixin"
+  ],
+  "client": [
+    "CanvasSignEditScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

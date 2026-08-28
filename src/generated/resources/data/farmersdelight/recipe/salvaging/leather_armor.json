@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "children": [
+        "minecraft:leather_helmet",
+        "minecraft:leather_chestplate",
+        "minecraft:leather_leggings",
+        "minecraft:leather_boots"
+      ],
+      "type": "neoforge:compound"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "minecraft:leather"
+      }
+    }
+  ],
+  "tool": "#c:tools/shear"
+}
