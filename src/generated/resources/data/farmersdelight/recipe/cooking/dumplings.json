@@ -5,15 +5,12 @@
     "#c:foods/dough",
     "#c:crops/cabbage",
     "#c:crops/onion",
-    {
-      "children": [
-        "#c:foods/raw_chicken",
-        "#c:foods/raw_pork",
-        "#c:foods/raw_beef",
-        "minecraft:brown_mushroom"
-      ],
-      "type": "neoforge:compound"
-    }
+    [
+      "#c:foods/raw_chicken",
+      "#c:foods/raw_pork",
+      "#c:foods/raw_beef",
+      "minecraft:brown_mushroom"
+    ]
   ],
   "result": {
     "count": 2,

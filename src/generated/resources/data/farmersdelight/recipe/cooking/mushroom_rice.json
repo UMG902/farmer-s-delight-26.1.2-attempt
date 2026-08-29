@@ -5,17 +5,14 @@
     "minecraft:brown_mushroom",
     "minecraft:red_mushroom",
     "#c:crops/rice",
-    {
-      "children": [
-        "minecraft:carrot",
-        "minecraft:potato"
-      ],
-      "type": "neoforge:compound"
-    }
+    [
+      "minecraft:carrot",
+      "minecraft:potato"
+    ]
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "count": 1,
-    "id": "farmersdelight:mushroom_rice"
+    "id": "farmersdelight:mushroom_rice",
+    "count": 1
   }
 }

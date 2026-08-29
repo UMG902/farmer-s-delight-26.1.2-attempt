@@ -5,15 +5,11 @@
     "#c:foods/raw_chicken",
     "#c:crops/carrot",
     "#c:foods/leafy_green",
-    {
-      "base": "#c:foods/vegetable",
-      "subtracted": "minecraft:melon_slice",
-      "type": "neoforge:difference"
-    }
+    "#c:foods/vegetable"
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "count": 1,
-    "id": "farmersdelight:chicken_soup"
+    "id": "farmersdelight:chicken_soup",
+    "count": 1
   }
 }

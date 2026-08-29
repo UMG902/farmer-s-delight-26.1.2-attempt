@@ -6,15 +6,11 @@
     "#c:mushrooms",
     "#c:foods/pasta",
     "#c:foods/leafy_green",
-    {
-      "base": "#c:foods/vegetable",
-      "subtracted": "minecraft:melon_slice",
-      "type": "neoforge:difference"
-    }
+    "#c:foods/vegetable"
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "count": 1,
-    "id": "farmersdelight:vegetable_noodles"
+    "id": "farmersdelight:vegetable_noodles",
+    "count": 1
   }
 }

@@ -1,7 +1,6 @@
 {
   "type": "farmersdelight:cooking",
   "container": {
-    "count": 1,
     "id": "minecraft:pumpkin"
   },
   "cookingtime": 400,
@@ -12,15 +11,11 @@
     "minecraft:brown_mushroom",
     "#c:crops/potato",
     "#c:foods/berry",
-    {
-      "base": "#c:foods/vegetable",
-      "subtracted": "minecraft:melon_slice",
-      "type": "neoforge:difference"
-    }
+    "#c:foods/vegetable"
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "count": 1,
-    "id": "farmersdelight:stuffed_pumpkin_block"
+    "id": "farmersdelight:stuffed_pumpkin_block",
+    "count": 1
   }
 }

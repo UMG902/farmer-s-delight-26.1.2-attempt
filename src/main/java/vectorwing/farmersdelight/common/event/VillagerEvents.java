@@ -1,59 +1,49 @@
-// TODO: Villager trades are apparently datagen now! Get on it.
+package vectorwing.farmersdelight.common.event;
 
-//package vectorwing.farmersdelight.common.event;
-//
-//import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-//import net.minecraft.core.registries.BuiltInRegistries;
-//import net.minecraft.resources.Identifier;
-//import net.minecraft.world.entity.npc.villager.VillagerProfession;
-//import net.minecraft.world.item.ItemStack;
-//import net.minecraft.world.item.Items;
-//import net.minecraft.world.level.ItemLike;
-//import net.neoforged.bus.api.SubscribeEvent;
-//import net.neoforged.fml.common.EventBusSubscriber;
-//import vectorwing.farmersdelight.FarmersDelight;
-//import vectorwing.farmersdelight.common.Configuration;
-//import vectorwing.farmersdelight.common.registry.ModItems;
-//
-//import javax.annotation.ParametersAreNonnullByDefault;
-//import java.util.List;
-//
-//@EventBusSubscriber(modid = FarmersDelight.MODID)
-//@ParametersAreNonnullByDefault
-//public class VillagerEvents
-//{
-//	@SubscribeEvent
-//	public static void onVillagerTrades(VillagerTradesEvent event) {
-//		if (!Configuration.ENABLE_FARMERS_BUY_FD_CROPS.get()) return;
-//
-//		Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-//		VillagerProfession profession = event.getType();
-//		Identifier professionKey = BuiltInRegistries.VILLAGER_PROFESSION.getKey(profession);
-//		if (professionKey == null) return;
-//		if (professionKey.getPath().equals("farmer")) {
-//			trades.get(1).add(emeraldForItemsTrade(ModItems.ONION.get(), 26, 16, 2));
-//			trades.get(1).add(emeraldForItemsTrade(ModItems.TOMATO.get(), 26, 16, 2));
-//			trades.get(2).add(emeraldForItemsTrade(ModItems.CABBAGE.get(), 16, 16, 5));
-//			trades.get(2).add(emeraldForItemsTrade(ModItems.RICE.get(), 20, 16, 5));
-//		}
-//	}
-//
-//	@SubscribeEvent
-//	public static void onWandererTrades(WandererTradesEvent event) {
-//		if (Configuration.ENABLE_WANDERING_TRADER_SELLS_FD_ITEMS.get()) {
-//			List<VillagerTrades.ItemListing> trades = event.getGenericTrades();
-//			trades.add(itemForEmeraldTrade(ModItems.CABBAGE_SEEDS.get(), 1, 12));
-//			trades.add(itemForEmeraldTrade(ModItems.TOMATO_SEEDS.get(), 1, 12));
-//			trades.add(itemForEmeraldTrade(ModItems.RICE.get(), 1, 12));
-//			trades.add(itemForEmeraldTrade(ModItems.ONION.get(), 1, 12));
-//		}
-//	}
-//
-//	public static BasicItemListing emeraldForItemsTrade(ItemLike item, int count, int maxTrades, int xp) {
-//		return new BasicItemListing(new ItemStack(item, count), new ItemStack(Items.EMERALD), maxTrades, xp, 0.05F);
-//	}
-//
-//	public static BasicItemListing itemForEmeraldTrade(ItemLike item, int maxTrades, int xp) {
-//		return new BasicItemListing(1, new ItemStack(item), maxTrades, xp, 0.05F);
-//	}
-//}
+/*
+ * Villager trades have been migrated to the data-driven registry system
+ * introduced in NeoForge 26.1 / Minecraft 1.21.11+.
+ *
+ * The previous API (VillagerTradesEvent, WandererTradesEvent, the
+ * VillagerTrades.ItemListing interface, and the BasicItemListing helper
+ * class) has been REMOVED in 26.1. Trades are now declared as JSON files in:
+ *
+ *   data/<namespace>/villager_trade/<path>.json
+ *   data/<namespace>/tags/villager_trade/<path>.json
+ *
+ * Per the NeoForge 26.1 primer section "Datapack Villager Trades":
+ *   - "wants" = the stack the trader WANTS (i.e. what the player gives)
+ *   - "gives" = the stack the trader GIVES (i.e. what the player receives)
+ *
+ * This class is intentionally left empty so existing references to the class
+ * still resolve. The trades previously wired up here (farmer buying FD crops,
+ * wandering trader selling FD seeds) are now defined by the JSON files at:
+ *
+ *   src/generated/resources/data/farmersdelight/villager_trade/farmer/1/*.json
+ *   src/generated/resources/data/farmersdelight/villager_trade/farmer/2/*.json
+ *   src/generated/resources/data/farmersdelight/villager_trade/wandering_trader/*.json
+ *
+ * Tag wiring (which adds these trades to the farmer and wandering_trader
+ * trade lists) is at:
+ *
+ *   src/generated/resources/data/minecraft/tags/villager_trade/farmer/level_1.json
+ *   src/generated/resources/data/minecraft/tags/villager_trade/farmer/level_2.json
+ *   src/generated/resources/data/minecraft/tags/villager_trade/wandering_trader/common.json
+ *
+ * NOTE: The upstream Fabric refabricated repo (FarmersDelightRefabricated) has
+ * the wandering-trader wants/gives direction inverted (the wandering trader
+ * BUYS FD items from the player instead of SELLING them). This NeoForge port
+ * corrects that bug to match the original vectorwing/FarmersDelight@1.21
+ * behavior, where the wandering trader SELLS FD items (player gives 1
+ * emerald, receives 1 FD item).
+ *
+ * The previous Configuration.ENABLE_FARMERS_BUY_FD_CROPS and
+ * Configuration.ENABLE_WANDERING_TRADER_SELLS_FD_ITEMS config flags no
+ * longer have any effect on these data-driven trades. To disable a trade,
+ * remove or comment out its entry in the tag JSON.
+ */
+final class VillagerEvents {
+    private VillagerEvents() {
+        // Utility class, no instantiation.
+    }
+}

@@ -4,18 +4,15 @@
   "experience": 0.35,
   "ingredients": [
     "#c:crops/cabbage",
-    {
-      "children": [
-        "#c:foods/raw_meat",
-        "#c:foods/safe_raw_fish",
-        "#c:foods/vegetable",
-        "#c:mushrooms"
-      ],
-      "type": "neoforge:compound"
-    }
+    [
+      "#c:foods/raw_meat",
+      "#c:foods/safe_raw_fish",
+      "#c:foods/vegetable",
+      "#c:mushrooms"
+    ]
   ],
   "result": {
-    "count": 1,
-    "id": "farmersdelight:cabbage_rolls"
+    "id": "farmersdelight:cabbage_rolls",
+    "count": 1
   }
 }

@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "minecraft:pale_oak_chest_boat"
+  ],
+  "result": [
+    {
+      "item": {
+        "id": "minecraft:pale_oak_boat",
+        "count": 1
+      }
+    },
+    {
+      "item": {
+        "id": "minecraft:chest",
+        "count": 1
+      }
+    }
+  ],
+  "tool": "#minecraft:hoes"
+}

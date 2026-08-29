@@ -1,13 +1,13 @@
 {
   "type": "farmersdelight:cutting",
   "ingredients": [
-    "minecraft:stone"
+    "minecraft:deepslate"
   ],
   "result": [
     {
       "item": {
-        "count": 1,
-        "id": "minecraft:cobblestone"
+        "id": "minecraft:cobbled_deepslate",
+        "count": 1
       }
     }
   ],
