@@ -1,6 +1,8 @@
-###connector kept me stuck at preparing for world gen so i made this
+### Hello
+connector with refabricated kept me stuck at preparing for world gen screen, so i made this
 
-this a port to 26.1.2 neoforge
+this a port to 26.1.2 neoforge, just import and build, that is it
+
 i have no plans of really maintaining this, or releasing it to modrinth and stuff, especially since i saw today that the fabic port fixed some crashes with connector {this might be useless now}, but i'll keep it here if anyone wants it, and just in case anything happens to my hard drive or something
 
 what is after this is the readme from the original mod so all these links are to the original mod, check it out
