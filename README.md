@@ -1,13 +1,13 @@
 ### Hello
-connector with refabricated kept me stuck at preparing for world gen screen, so i made this
+connector with refabricated kept me stuck at preparing for world gen screen, so i made this {not official}
 
 this a port to 26.1.2 neoforge, just import and build, that is it
 
 i have no plans of really maintaining this, or releasing it to modrinth and stuff, especially since i saw today that the fabic port fixed some crashes with connector {this might be useless now}, but i'll keep it here if anyone wants it, and just in case anything happens to my hard drive or something {but still please report bugs and problems, and maybe, maybe i will fix them}
 
-what is after this is the readme from the original mod so all these links are to the original mod, check it out
 also disclaimer: ai has been used in the process of porting
 
+what is after this is the readme from the original mod so all these links are to the original mod, check it out
 
 # Farmer's Delight
 
