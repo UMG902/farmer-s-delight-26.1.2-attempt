@@ -19,6 +19,8 @@ import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.client.gui.CookingPotScreen;
 import vectorwing.farmersdelight.client.gui.CookingPotTooltip;
 import vectorwing.farmersdelight.client.gui.HUDOverlays;
+import vectorwing.farmersdelight.client.gui.renderer.GuiCanvasSignRenderer;
+import vectorwing.farmersdelight.client.gui.state.GuiCanvasSignRenderState;
 import vectorwing.farmersdelight.client.particle.SparkleParticle;
 import vectorwing.farmersdelight.client.particle.StarParticle;
 import vectorwing.farmersdelight.client.particle.SteamParticle;
@@ -42,13 +44,37 @@ public class ClientSetupEvents
         public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
                 event.registerItem(new IClientItemExtensions()
                 {
-                        // Stubbed - getCustomRenderer() removed from IClientItemExtensions in NeoForge 26.1.2.99
-
                         @Override
                         public HumanoidModel.@Nullable ArmPose getArmPose(LivingEntity living, InteractionHand hand, ItemStack stack) {
+                                // The original Farmer's Delight pose is only used during the skillet flip.
+                                // The normal cooking position comes from the cooking item model itself.
                                 return stack.has(ModDataComponents.SKILLET_FLIP_TIMESTAMP.get()) ? EnumParameters.PROXY_SKILLET_FLIP.getValue() : null;
                         }
                 }, ModItems.SKILLET.get());
+        }
+
+        @SubscribeEvent
+        public static void registerConditionalItemModelProperties(RegisterConditionalItemModelPropertyEvent event) {
+                event.register(
+                        Identifier.fromNamespaceAndPath(FarmersDelight.MODID, "skillet_cooking"),
+                        SkilletCookingProperty.MAP_CODEC
+                );
+        }
+
+        @SubscribeEvent
+        public static void registerSpecialModelRenderers(RegisterSpecialModelRendererEvent event) {
+                event.register(
+                        Identifier.fromNamespaceAndPath(FarmersDelight.MODID, "skillet_cooking"),
+                        SkilletItemRenderer.Unbaked.MAP_CODEC
+                );
+        }
+
+        @SubscribeEvent
+        public static void registerPictureInPictureRenderers(RegisterPictureInPictureRenderersEvent event) {
+                // Required by CanvasSignEditScreen to render the canvas sign preview in the
+                // sign edit GUI. The renderer draws the canvas sign model using the canvas
+                // sprite from the sign atlas (see ModAtlases#getCanvasSignMaterial).
+                event.register(GuiCanvasSignRenderState.class, GuiCanvasSignRenderer::new);
         }
 
         @SubscribeEvent

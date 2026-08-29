@@ -207,6 +207,6 @@ public class SkilletBlock extends BaseEntityBlock implements SimpleWaterloggedBl
 
 		int result = (int) (cookingSeconds * cookingTimeReduction) * 20;
 
-		return Mth.clamp(result, MINIMUM_COOKING_TIME, originalCookingTime);
+		return Mth.clamp(result, MINIMUM_COOKING_TIME, cookingTime);
 	}
 }

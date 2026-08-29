@@ -6,6 +6,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
+import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
@@ -250,7 +251,17 @@ public class SkilletItem extends BlockItem
 	@Override
 	public int getBarWidth(ItemStack stack) {
 		if (stack.has(ModDataComponents.COOKING_TIME_LENGTH.get())) {
-			return Math.round(13.0F - (float) ClientRenderUtils.getClientPlayerHack().getUseItemRemainingTicks() * 13.0F / (float) this.getUseDuration(stack, ClientRenderUtils.getClientPlayerHack()));
+			Player player = ClientRenderUtils.getClientPlayerHack();
+			if (player == null) return 0;
+
+			int total = this.getUseDuration(stack, player);
+			if (total <= 0 || !player.isUsingItem() || !ItemStack.matches(player.getUseItem(), stack)) return 0;
+
+			// Use elapsed ticks rather than remaining duration. This prevents the
+			// bar from jumping when the cooking-time component is synchronized.
+			int elapsed = Mth.clamp(player.getTicksUsingItem(), 0, total);
+			float progress = (float) elapsed / (float) total;
+			return Mth.clamp(Math.round(progress * 13.0F), 0, 13);
 		} else {
 			return super.getBarWidth(stack);
 		}
@@ -269,8 +280,9 @@ public class SkilletItem extends BlockItem
 	}
 
 	public static Optional<RecipeHolder<CampfireCookingRecipe>> getCookingRecipe(ItemStack stack, Level level) {
-		if (!stack.isEmpty() && level instanceof ServerLevel serverLevel) {
-			return serverLevel.recipeAccess().getRecipeFor(RecipeType.CAMPFIRE_COOKING, new SingleRecipeInput(stack), level);
+		if (stack.isEmpty()) return Optional.empty();
+		if (level instanceof ServerLevel serverLevel) {
+			return serverLevel.recipeAccess().getRecipeFor(RecipeType.CAMPFIRE_COOKING, new SingleRecipeInput(stack), serverLevel);
 		}
 		return Optional.empty();
 	}
