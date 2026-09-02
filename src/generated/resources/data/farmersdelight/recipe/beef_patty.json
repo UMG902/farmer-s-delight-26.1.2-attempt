@@ -5,7 +5,6 @@
   "experience": 0.35,
   "ingredient": "farmersdelight:minced_beef",
   "result": {
-    "count": 1,
     "id": "farmersdelight:beef_patty"
   }
 }

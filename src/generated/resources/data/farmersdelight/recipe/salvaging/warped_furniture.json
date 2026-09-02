@@ -17,8 +17,7 @@
     {
       "chance": 0.75,
       "item": {
-        "id": "minecraft:warped_planks",
-        "count": 1
+        "id": "minecraft:warped_planks"
       }
     }
   ],

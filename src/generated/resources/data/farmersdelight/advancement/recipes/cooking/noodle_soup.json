@@ -5,11 +5,13 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "farmersdelight:raw_pasta",
-              "minecraft:dried_kelp",
-              "minecraft:porkchop"
-            ]
+            "items": "farmersdelight:raw_pasta"
+          },
+          {
+            "items": "minecraft:dried_kelp"
+          },
+          {
+            "items": "minecraft:porkchop"
           }
         ]
       },

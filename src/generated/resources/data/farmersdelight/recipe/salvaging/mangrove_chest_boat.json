@@ -6,13 +6,11 @@
   "result": [
     {
       "item": {
-        "count": 1,
         "id": "minecraft:mangrove_boat"
       }
     },
     {
       "item": {
-        "count": 1,
         "id": "minecraft:chest"
       }
     }

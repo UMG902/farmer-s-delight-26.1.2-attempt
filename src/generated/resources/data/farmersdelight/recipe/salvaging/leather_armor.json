@@ -11,13 +11,9 @@
   "result": [
     {
       "item": {
-        "id": "minecraft:leather",
-        "count": 1
+        "id": "minecraft:leather"
       }
     }
   ],
-  "tool": [
-    "minecraft:shears",
-    "#c:tools/shear"
-  ]
+  "tool": "#c:tools/shear"
 }

@@ -5,11 +5,13 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:glow_berries",
-              "minecraft:milk_bucket",
-              "farmersdelight:milk_bottle"
-            ]
+            "items": "minecraft:glow_berries"
+          },
+          {
+            "items": "minecraft:milk_bucket"
+          },
+          {
+            "items": "farmersdelight:milk_bottle"
           }
         ]
       },

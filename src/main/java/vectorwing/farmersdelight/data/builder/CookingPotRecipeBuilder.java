@@ -1,5 +1,7 @@
 package vectorwing.farmersdelight.data.builder;
 
+import vectorwing.farmersdelight.data.DataTags;
+
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRequirements;
 import net.minecraft.advancements.AdvancementRewards;
@@ -67,7 +69,7 @@ public class CookingPotRecipeBuilder implements RecipeBuilder
 	}
 
 	public CookingPotRecipeBuilder addIngredient(TagKey<Item> tagIn) {
-		return addIngredient(Ingredient.of(BuiltInRegistries.ITEM.getOrThrow(tagIn)));
+		return addIngredient(DataTags.tagIngredient(tagIn));
 	}
 
 	public CookingPotRecipeBuilder addIngredient(ItemLike itemIn) {

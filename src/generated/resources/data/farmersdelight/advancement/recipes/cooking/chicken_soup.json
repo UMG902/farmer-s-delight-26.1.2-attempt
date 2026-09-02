@@ -5,10 +5,10 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:chicken",
-              "minecraft:carrot"
-            ]
+            "items": "minecraft:chicken"
+          },
+          {
+            "items": "minecraft:carrot"
           }
         ]
       },

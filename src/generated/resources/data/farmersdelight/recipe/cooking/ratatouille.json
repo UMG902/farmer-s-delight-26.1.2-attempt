@@ -5,11 +5,14 @@
     "#c:crops/tomato",
     "#c:crops/onion",
     "#c:crops/beetroot",
-    "#c:foods/vegetable"
+    {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#c:foods/vegetable",
+      "subtracted": "minecraft:melon_slice"
+    }
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "id": "farmersdelight:ratatouille",
-    "count": 1
+    "id": "farmersdelight:ratatouille"
   }
 }

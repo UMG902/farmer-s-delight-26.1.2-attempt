@@ -5,12 +5,16 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "farmersdelight:onion",
-              "minecraft:bread",
-              "minecraft:milk_bucket",
-              "farmersdelight:milk_bottle"
-            ]
+            "items": "farmersdelight:onion"
+          },
+          {
+            "items": "minecraft:bread"
+          },
+          {
+            "items": "minecraft:milk_bucket"
+          },
+          {
+            "items": "farmersdelight:milk_bottle"
           }
         ]
       },

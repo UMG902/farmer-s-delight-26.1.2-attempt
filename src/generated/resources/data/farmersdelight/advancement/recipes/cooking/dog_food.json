@@ -5,11 +5,13 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:rotten_flesh",
-              "minecraft:bone_meal",
-              "farmersdelight:rice"
-            ]
+            "items": "minecraft:rotten_flesh"
+          },
+          {
+            "items": "minecraft:bone_meal"
+          },
+          {
+            "items": "farmersdelight:rice"
           }
         ]
       },

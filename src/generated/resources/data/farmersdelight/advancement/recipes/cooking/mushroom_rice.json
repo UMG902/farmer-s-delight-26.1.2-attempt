@@ -5,11 +5,13 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:brown_mushroom",
-              "minecraft:red_mushroom",
-              "farmersdelight:rice"
-            ]
+            "items": "minecraft:brown_mushroom"
+          },
+          {
+            "items": "minecraft:red_mushroom"
+          },
+          {
+            "items": "farmersdelight:rice"
           }
         ]
       },

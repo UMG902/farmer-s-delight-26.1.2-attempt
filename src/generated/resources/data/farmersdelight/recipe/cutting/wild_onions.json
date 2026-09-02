@@ -6,7 +6,6 @@
   "result": [
     {
       "item": {
-        "count": 1,
         "id": "farmersdelight:onion"
       }
     },
@@ -19,10 +18,22 @@
     {
       "chance": 0.1,
       "item": {
-        "count": 1,
         "id": "minecraft:lime_dye"
       }
     }
   ],
-  "tool": "#c:tools/knife"
+  "tool": {
+    "neoforge:ingredient_type": "neoforge:compound",
+    "children": [
+      [
+        "farmersdelight:flint_knife",
+        "farmersdelight:copper_knife",
+        "farmersdelight:iron_knife",
+        "farmersdelight:diamond_knife",
+        "farmersdelight:netherite_knife",
+        "farmersdelight:golden_knife"
+      ],
+      "#c:tools/knife"
+    ]
+  }
 }

@@ -5,13 +5,19 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:rabbit",
-              "minecraft:brown_mushroom",
-              "minecraft:red_mushroom",
-              "minecraft:carrot",
-              "minecraft:potato"
-            ]
+            "items": "minecraft:rabbit"
+          },
+          {
+            "items": "minecraft:brown_mushroom"
+          },
+          {
+            "items": "minecraft:red_mushroom"
+          },
+          {
+            "items": "minecraft:carrot"
+          },
+          {
+            "items": "minecraft:potato"
           }
         ]
       },

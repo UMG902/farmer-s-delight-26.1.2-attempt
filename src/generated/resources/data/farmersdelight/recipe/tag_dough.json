@@ -6,10 +6,22 @@
   "result": [
     {
       "item": {
-        "count": 1,
         "id": "farmersdelight:raw_pasta"
       }
     }
   ],
-  "tool": "#c:tools/knife"
+  "tool": {
+    "neoforge:ingredient_type": "neoforge:compound",
+    "children": [
+      [
+        "farmersdelight:flint_knife",
+        "farmersdelight:copper_knife",
+        "farmersdelight:iron_knife",
+        "farmersdelight:diamond_knife",
+        "farmersdelight:netherite_knife",
+        "farmersdelight:golden_knife"
+      ],
+      "#c:tools/knife"
+    ]
+  }
 }

@@ -5,11 +5,13 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:cocoa_beans",
-              "minecraft:milk_bucket",
-              "farmersdelight:milk_bottle"
-            ]
+            "items": "minecraft:cocoa_beans"
+          },
+          {
+            "items": "minecraft:milk_bucket"
+          },
+          {
+            "items": "farmersdelight:milk_bottle"
           }
         ]
       },

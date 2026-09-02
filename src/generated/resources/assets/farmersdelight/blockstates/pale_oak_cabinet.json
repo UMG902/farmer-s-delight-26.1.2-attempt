@@ -9,12 +9,10 @@
       "y": 90
     },
     "facing=north,open=false": {
-      "model": "farmersdelight:block/pale_oak_cabinet",
-      "y": 0
+      "model": "farmersdelight:block/pale_oak_cabinet"
     },
     "facing=north,open=true": {
-      "model": "farmersdelight:block/pale_oak_cabinet_open",
-      "y": 0
+      "model": "farmersdelight:block/pale_oak_cabinet_open"
     },
     "facing=south,open=false": {
       "model": "farmersdelight:block/pale_oak_cabinet",

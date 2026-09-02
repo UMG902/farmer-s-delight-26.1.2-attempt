@@ -5,11 +5,13 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "farmersdelight:wheat_dough",
-              "farmersdelight:cabbage",
-              "farmersdelight:onion"
-            ]
+            "items": "farmersdelight:wheat_dough"
+          },
+          {
+            "items": "farmersdelight:cabbage"
+          },
+          {
+            "items": "farmersdelight:onion"
           }
         ]
       },

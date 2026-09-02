@@ -11,11 +11,14 @@
     "minecraft:brown_mushroom",
     "#c:crops/potato",
     "#c:foods/berry",
-    "#c:foods/vegetable"
+    {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#c:foods/vegetable",
+      "subtracted": "minecraft:melon_slice"
+    }
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "id": "farmersdelight:stuffed_pumpkin_block",
-    "count": 1
+    "id": "farmersdelight:stuffed_pumpkin_block"
   }
 }

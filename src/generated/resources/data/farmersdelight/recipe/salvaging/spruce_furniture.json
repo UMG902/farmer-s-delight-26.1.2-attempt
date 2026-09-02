@@ -18,8 +18,7 @@
     {
       "chance": 0.75,
       "item": {
-        "id": "minecraft:spruce_planks",
-        "count": 1
+        "id": "minecraft:spruce_planks"
       }
     }
   ],

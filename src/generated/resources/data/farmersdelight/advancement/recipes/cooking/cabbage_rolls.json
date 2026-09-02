@@ -5,10 +5,10 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "farmersdelight:cabbage",
-              "farmersdelight:cabbage_leaf"
-            ]
+            "items": "farmersdelight:cabbage"
+          },
+          {
+            "items": "farmersdelight:cabbage_leaf"
           }
         ]
       },

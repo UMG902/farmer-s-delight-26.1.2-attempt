@@ -5,11 +5,13 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "farmersdelight:raw_pasta",
-              "minecraft:mutton",
-              "farmersdelight:tomato_sauce"
-            ]
+            "items": "farmersdelight:raw_pasta"
+          },
+          {
+            "items": "minecraft:mutton"
+          },
+          {
+            "items": "farmersdelight:tomato_sauce"
           }
         ]
       },

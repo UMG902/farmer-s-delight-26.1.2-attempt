@@ -1,6 +1,6 @@
 {
   "parent": "farmersdelight:block/template_crop_with_rope",
-  "render_type": "minecraft:cutout",
+  "render_type": "cutout",
   "textures": {
     "crop": "farmersdelight:block/tomatoes_old_stage3",
     "rope_side": "farmersdelight:block/tomatoes_coiled_rope",

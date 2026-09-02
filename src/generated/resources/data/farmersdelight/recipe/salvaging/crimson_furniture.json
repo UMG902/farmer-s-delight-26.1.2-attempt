@@ -17,8 +17,7 @@
     {
       "chance": 0.75,
       "item": {
-        "id": "minecraft:crimson_planks",
-        "count": 1
+        "id": "minecraft:crimson_planks"
       }
     }
   ],

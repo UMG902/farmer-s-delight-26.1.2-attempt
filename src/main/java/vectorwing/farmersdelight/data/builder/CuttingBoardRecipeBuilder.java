@@ -7,6 +7,7 @@ import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.Item;
@@ -124,8 +125,22 @@ public class CuttingBoardRecipeBuilder implements RecipeBuilder
 		this.setNamespace(FarmersDelight.MODID).save(output);
 	}
 
+	/**
+	 * The default recipe id derives from the INGREDIENT's first item (upstream behaviour), not
+	 * from the result. Tag ingredients whose contents are not bound during datagen fall back
+	 * to the result item; recipes using those always save with explicit ids anyway.
+	 */
+	public Item getDefaultIdItem() {
+		try {
+			return this.ingredient.items().findFirst().map(Holder::value).orElse(this.resultItem);
+		} catch (UnsupportedOperationException ignored) {
+			// unbound tag holder set from DataTags
+		}
+		return this.resultItem;
+	}
+
 	public void save(RecipeOutput output) {
-		Identifier defaultLocation = getDefaultRecipeId(getResult());
+		Identifier defaultLocation = getDefaultRecipeId(getDefaultIdItem());
 		save(output, ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(this.namespace != null ? namespace : defaultLocation.getNamespace(), defaultLocation.getPath()).withPrefix(folder.getSerializedName() + "/")));
 	}
 

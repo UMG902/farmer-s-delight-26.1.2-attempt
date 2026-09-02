@@ -1,5 +1,7 @@
 package vectorwing.farmersdelight.data.recipe;
 
+import vectorwing.farmersdelight.data.DataTags;
+
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeOutput;
@@ -26,12 +28,12 @@ import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 public class CuttingRecipes
 {
         public static Ingredient KNIVES = matchesTool(KnifeItem.KNIFE_DIG, CommonTags.Items.TOOLS_KNIFE);
-        public static Ingredient PICKAXES = Ingredient.of(BuiltInRegistries.ITEM.getOrThrow(ItemTags.PICKAXES));
-        public static Ingredient AXES = Ingredient.of(BuiltInRegistries.ITEM.getOrThrow(ItemTags.AXES));
-        public static Ingredient AXES_STRIP = Ingredient.of(BuiltInRegistries.ITEM.getOrThrow(ItemTags.AXES));
-        public static Ingredient SHOVELS = Ingredient.of(BuiltInRegistries.ITEM.getOrThrow(ItemTags.SHOVELS));
-        public static Ingredient HOES = Ingredient.of(BuiltInRegistries.ITEM.getOrThrow(ItemTags.HOES));
-        public static Ingredient SHEARS = Ingredient.of(BuiltInRegistries.ITEM.getOrThrow(Tags.Items.TOOLS_SHEAR));
+        public static Ingredient PICKAXES = DataTags.tagIngredient(ItemTags.PICKAXES);
+        public static Ingredient AXES = DataTags.tagIngredient(ItemTags.AXES);
+        public static Ingredient AXES_STRIP = DataTags.tagIngredient(ItemTags.AXES);
+        public static Ingredient SHOVELS = DataTags.tagIngredient(ItemTags.SHOVELS);
+        public static Ingredient HOES = DataTags.tagIngredient(ItemTags.HOES);
+        public static Ingredient SHEARS = DataTags.tagIngredient(Tags.Items.TOOLS_SHEAR);
 
         public static void register(HolderLookup.Provider registries, RecipeOutput output) {
                 // Knife
@@ -111,7 +113,7 @@ public class CuttingRecipes
         }
 
         private static void cuttingFoods(RecipeOutput output) {
-                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(BuiltInRegistries.ITEM.getOrThrow(CommonTags.Items.FOODS_DOUGH)), KNIVES, ModItems.RAW_PASTA.get(), 1)
+                CuttingBoardRecipeBuilder.cuttingRecipe(DataTags.tagIngredient(CommonTags.Items.FOODS_DOUGH), KNIVES, ModItems.RAW_PASTA.get(), 1)
                                 .save(output, RecipeUtils.FDLocation("tag_dough"));
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.KELP_ROLL.get()), KNIVES, ModItems.KELP_ROLL_SLICE.get(), 3)
                                 .saveToFD(output);
@@ -364,7 +366,7 @@ public class CuttingRecipes
         }
 
         private static Ingredient matchesTool(ItemAbility toolAction, TagKey<Item> fallbackTag) {
-                return CompoundIngredient.of(new ItemAbilityIngredient(toolAction).toVanilla(), Ingredient.of(BuiltInRegistries.ITEM.getOrThrow(fallbackTag)));
+                return CompoundIngredient.of(new ItemAbilityIngredient(toolAction).toVanilla(), DataTags.tagIngredient(fallbackTag));
         }
 
         private static Identifier salvagingRecipe(String name) {

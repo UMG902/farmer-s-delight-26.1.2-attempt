@@ -15,7 +15,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "id": "minecraft:rabbit_stew",
-    "count": 1
+    "id": "minecraft:rabbit_stew"
   }
 }

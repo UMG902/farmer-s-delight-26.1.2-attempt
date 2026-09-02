@@ -99,7 +99,7 @@ public class LootModifiers extends GlobalLootModifierProvider
 	}
 
 	private AddTableLootModifier addNewLootPool(ResourceKey<LootTable> lootToAddTo, ResourceKey<LootTable> newPool) {
-		return new AddTableLootModifier(new LootItemCondition[]{LootTableIdCondition.builder(lootToAddTo.registry()).build()}, IGlobalLootModifier.DEFAULT_PRIORITY, newPool);
+		return new AddTableLootModifier(new LootItemCondition[]{LootTableIdCondition.builder(lootToAddTo.identifier()).build()}, IGlobalLootModifier.DEFAULT_PRIORITY, newPool);
 	}
 
 	private AddItemModifier addItemOnPlayerKill(HolderGetter<EntityType<?>> entityTypes, Item item, float chance, EntityType<?>... entity) {

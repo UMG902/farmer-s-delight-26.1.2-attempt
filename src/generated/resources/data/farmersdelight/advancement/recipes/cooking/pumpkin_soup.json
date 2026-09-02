@@ -5,13 +5,19 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:pumpkin",
-              "farmersdelight:pumpkin_slice",
-              "minecraft:porkchop",
-              "minecraft:milk_bucket",
-              "farmersdelight:milk_bottle"
-            ]
+            "items": "minecraft:pumpkin"
+          },
+          {
+            "items": "farmersdelight:pumpkin_slice"
+          },
+          {
+            "items": "minecraft:porkchop"
+          },
+          {
+            "items": "minecraft:milk_bucket"
+          },
+          {
+            "items": "farmersdelight:milk_bottle"
           }
         ]
       },

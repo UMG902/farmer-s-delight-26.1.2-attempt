@@ -5,11 +5,13 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "farmersdelight:tomato",
-              "farmersdelight:onion",
-              "minecraft:beetroot"
-            ]
+            "items": "farmersdelight:tomato"
+          },
+          {
+            "items": "farmersdelight:onion"
+          },
+          {
+            "items": "minecraft:beetroot"
           }
         ]
       },

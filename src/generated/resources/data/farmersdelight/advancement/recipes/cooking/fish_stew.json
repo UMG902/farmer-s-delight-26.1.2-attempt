@@ -5,13 +5,19 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:salmon",
-              "minecraft:cod",
-              "minecraft:tropical_fish",
-              "farmersdelight:tomato_sauce",
-              "farmersdelight:onion"
-            ]
+            "items": "minecraft:salmon"
+          },
+          {
+            "items": "minecraft:cod"
+          },
+          {
+            "items": "minecraft:tropical_fish"
+          },
+          {
+            "items": "farmersdelight:tomato_sauce"
+          },
+          {
+            "items": "farmersdelight:onion"
           }
         ]
       },
